@@ -25,7 +25,7 @@ export default class App extends React.Component {
     this.state = ({
       albums: [],
     });
-    console.log(this.state.albums);
+    console.log("ALBUMS ARREY" + this.state.albums[0]);
     this.getAlbums = this.getAlbums.bind(this);
     this.processAlbums = this.processAlbums.bind(this);
   }
@@ -41,7 +41,7 @@ export default class App extends React.Component {
 
   processAlbums(payload) {
     this.setState({
-      albums: payload.albums.items,
+      albums: payload,
     });
 
     console.log("ARTIST:" + payload);
