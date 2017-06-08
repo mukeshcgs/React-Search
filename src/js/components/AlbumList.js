@@ -1,18 +1,11 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import { PropTypes } from 'prop-types';
 
 //We define a function called AlbumList which takes a props argument.
 const AlbumList = (props) => {
     console.log("ALBUM LIST:" + props.albums);
     //props will have an albums property which holds the array of albums we want to render. We map over the albums, creating an array of <li> elements, with each holding an album name.
-    const albums = props.albums.map((album) => <div className="well">
-            {/*<p>{album.snippet}</p>
-            <p>{album.lead_paragraph}</p>
-            <a href={album.multimedia[0].url}>
-                {album.multimedia[0].url}
-            </a>
-            */}
-            <p>{album.headline.main}</p>
-        </div>);
+    const albums = props.albums.map((album) => <div className="well well-sm" key={album._id}>{album.headline.main}</div>);
 
     // We return a <ul> element, with our list of album names inside.
     return (<div>{albums}</div>);

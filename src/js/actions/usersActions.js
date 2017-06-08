@@ -1,5 +1,5 @@
 export function fetchUser() {
-    return {
+    return { 
         type: "FETCH_USER_FULFILLED",
         payload: {
             name:"Mak",

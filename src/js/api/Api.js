@@ -17,12 +17,14 @@ function fetch(request, callback) {
     //console.log(response.data.response.docs.length);
 }
 
-export function getAlbums(artist, callback) {
+export function getAlbums(searchQuery, callback) {
     //const request = `https://api.spotify.com/v1/search?q=${artist}&type=album`;
     //https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=5964d3f0d29c4469a8fac5cf9767b2b4&&q=john&&fq=label&&begin_date=20160101&&end_date=20161231&&sort=newest
     //https://api.nytimes.com/svc/archive/v1/2016/1.json
+    //https://api.nytimes.com/svc/archive/v1/2016/1.json?api-key=5964d3f0d29c4469a8fac5cf9767b2b4&&q=
 
-    const request = `https://api.nytimes.com/svc/archive/v1/2016/1.json?api-key=5964d3f0d29c4469a8fac5cf9767b2b4&&q=${artist}`;
+
+    const request = `https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=5964d3f0d29c4469a8fac5cf9767b2b4&&q=${searchQuery}&&fq=label&&begin_date=20160101&&end_date=20161231&&sort=newest`;
     fetch(request, callback);
 
 }
